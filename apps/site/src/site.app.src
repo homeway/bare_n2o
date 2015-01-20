@@ -1,0 +1,9 @@
+{application, site,
+ [
+  {description, "N2O Sample App on SnowStorm"},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [kernel, stdlib, n2o]},
+  {mod, { web_app, []}},
+  {env, []}
+ ]}.
