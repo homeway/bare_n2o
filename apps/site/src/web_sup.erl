@@ -22,7 +22,7 @@ mime() -> [{mimetypes,cow_mimetypes,all}].
 dispatch_rules() ->
     cowboy_router:compile(
         [{'_', [
-            {"/static/[...]", n2o_dynalo, {dir, "apps/review/priv/static", mime()}},
+            {"/static/[...]", n2o_dynalo, {dir, "apps/site/priv/static", mime()}},
             {"/n2o/[...]", n2o_dynalo, {dir, "deps/n2o/priv", mime()}},
             {"/ws/[...]", bullet_handler, [{handler, n2o_bullet}]},
             {'_', n2o_cowboy, []}
