@@ -27,7 +27,7 @@ I don't like to start erl with mad because follow reasons:
 
 I start N2O project by my way:
 ```` bash
-erl -pa deps/snowstorm_n2o/ebin -eval "snowstorm\_console:start()"
+erl -pa deps/snowstorm_n2o/ebin -eval "snowstorm_console:start()"
 ````
 You can write this in your .sh or .bat file.
 
@@ -57,9 +57,9 @@ go() ->
     application:start(snowstorm),
     application:start(sample),
     RunTests = fun(Mods) ->
-        ToTest1 = [Mod || Mod <- Mods, erlang:function\_exported(Mod, test, 0)],
+        ToTest1 = [Mod || Mod <- Mods, erlang:function_exported(Mod, test, 0)],
         ToTest2 = lists:filtermap(fun(M) ->
-            M2 = list\_to\_atom(atom\_to\_list(M) ++ "_test"),
+            M2 = list_to_atom(atom_to_list(M) ++ "_test"),
             code:ensure_loaded(M2),
             case erlang:function_exported(M2, test, 0) of
                 true -> {true, M2};
@@ -69,9 +69,9 @@ go() ->
         lists:map(fun(M) ->
             case M:test() of
                 ok ->
-                    sync\_notify:growl\_success("test ok");
+                    sync_notify:growl_success("test ok");
                 _ ->
-                    sync\_notify:growl\_errors("test failed")
+                    sync_notify:growl_errors("test failed")
             end
         end, lists:flatten(ToTest1 ++ ToTest2))
     end,
@@ -98,7 +98,7 @@ user_show
 example3:
 ````
 /user/chat/to/account_139432432
-user\_chat\_to
+user_chat_to
 ````
 
 ## About N2O
