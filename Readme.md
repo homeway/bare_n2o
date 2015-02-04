@@ -34,7 +34,7 @@ You can write this in your .sh or .bat file.
 ## Auto compile
 nitrogen use `sync` to auto compile project, and N2O use `active`.
 
-`active` is a importent tool to auto recompile project, it's very useful to compile `erlydtl` template.
+`active` is a importent tool to auto recompile `erlydtl` template.
 
 But `sync` can autoload test after compile.
 
@@ -44,9 +44,8 @@ In fact, you can use `sync` and `active` together.
 erl -sync executable notification_center
 ````
 
-You can write some code to auto execute test with `sync`.
-
-As you can see, the test module `abc_test` will be executed when I save `abc.erl`.
+I wrote some code follow.
+As you can guess, I there is test module `abc_test`, it will be executed when I save `abc.erl`.
 
 ```` erlang
 -module(onsync).
